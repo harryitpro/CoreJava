@@ -16,7 +16,7 @@ import java.util.Arrays;
  * Track the maximum sum.
  */
 
-public class SlidingWindow_Fixed {
+public class MaxSumOfContiguousSubarray {
     public static int maxSumSubarray(int[] nums, int k) {
         if (nums.length < k) return -1;
 

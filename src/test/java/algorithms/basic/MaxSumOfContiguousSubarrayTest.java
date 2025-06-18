@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SlidingWindow_FixedTest {
+public class MaxSumOfContiguousSubarrayTest {
 
     @Test
     @DisplayName("Test Case 1: Basic positive numbers")
@@ -16,7 +16,7 @@ public class SlidingWindow_FixedTest {
         // [2, 3, 4] sum = 9
         // [3, 4, 5] sum = 12
         // [4, 5, 6] sum = 15
-        assertEquals(15, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(15, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class SlidingWindow_FixedTest {
         // [2, 3, -4] sum = 1
         // [3, -4, 5] sum = 4
         // [-4, 5, 6] sum = 7
-        assertEquals(7, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(7, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class SlidingWindow_FixedTest {
         // [-2, -8] sum = -10
         // [-8, -1] sum = -9
         // [-1, -3] sum = -4
-        assertEquals(-4, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(-4, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -51,7 +51,7 @@ public class SlidingWindow_FixedTest {
         int[] nums = {10, 20, 30};
         int k = 3;
         // Expected: [10, 20, 30] sum = 60
-        assertEquals(60, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(60, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -60,7 +60,7 @@ public class SlidingWindow_FixedTest {
         int[] nums = {100, -50, 200, -10};
         int k = 1;
         // Expected: Max single element = 200
-        assertEquals(200, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(200, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -69,7 +69,7 @@ public class SlidingWindow_FixedTest {
         int[] nums = {};
         int k = 3;
         // Expected: nums.length (0) < k (3) -> returns -1
-        assertEquals(-1, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(-1, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -78,7 +78,7 @@ public class SlidingWindow_FixedTest {
         int[] nums = {1, 2};
         int k = 3;
         // Expected: nums.length (2) < k (3) -> returns -1
-        assertEquals(-1, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(-1, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -87,7 +87,7 @@ public class SlidingWindow_FixedTest {
         int[] nums = {7};
         int k = 1;
         // Expected: [7] sum = 7
-        assertEquals(7, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(7, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -96,7 +96,7 @@ public class SlidingWindow_FixedTest {
         int[] nums = {2, 2, 2, 2, 2};
         int k = 3;
         // Expected: [2, 2, 2] sum = 6
-        assertEquals(6, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(6, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -109,7 +109,7 @@ public class SlidingWindow_FixedTest {
         // [-1, 2, -2, 3] sum = 2
         // [2, -2, 3, -3] sum = 0
         // [-2, 3, -3, 4] sum = 2
-        assertEquals(2, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(2, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 
     @Test
@@ -122,6 +122,6 @@ public class SlidingWindow_FixedTest {
         // [5, 0] sum = 5
         // [0, 10] sum = 10
         // [10, 0] sum = 10
-        assertEquals(10, SlidingWindow_Fixed.maxSumSubarray(nums, k));
+        assertEquals(10, MaxSumOfContiguousSubarray.maxSumSubarray(nums, k));
     }
 }
