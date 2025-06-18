@@ -1,6 +1,6 @@
 package algorithms.basic;
 
-import static algorithms.basic.datasturctures.array.Array.swap;
+import static algorithms.datasturctures.array.Array.swap;
 
 public class QuickSort {
 

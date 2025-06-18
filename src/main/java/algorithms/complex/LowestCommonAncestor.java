@@ -1,6 +1,6 @@
 package algorithms.complex;
 
-import algorithms.basic.datasturctures.TreeNode;
+import algorithms.datasturctures.TreeNode;
 
 /**
  * the LCA of two nodes p and q is the deepest (lowest) node that has both p and q as descendants
