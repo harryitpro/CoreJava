@@ -5,9 +5,11 @@ package algorithms.basic;
  * Given an array nums and an integer k, find the maximum sum of any contiguous subarray of length k.
  */
 
+import java.util.Arrays;
+
 /**
  * Approach:
- *
+ * <p>
  * Use a fixed-size window of k elements.
  * Compute the sum for the first k elements.
  * Slide the window by removing the first element and adding the next element.
@@ -18,26 +20,16 @@ public class SlidingWindow_Fixed {
     public static int maxSumSubarray(int[] nums, int k) {
         if (nums.length < k) return -1;
 
-        int maxSum = 0, windowSum = 0;
+        int currentSum = Arrays.stream(nums).limit(k).sum();
+        int maxSum = currentSum;
 
-        // Compute the sum of the first window
-        for (int i = 0; i < k; i++) {
-            windowSum += nums[i];
-        }
-        maxSum = windowSum;
-
-        // Slide the window across the array
-        for (int i = k; i < nums.length; i++) {
-            windowSum += nums[i] - nums[i - k];  // Slide the window
-            maxSum = Math.max(maxSum, windowSum);
+        int left = 0, right = k - 1;
+        //start moving window using right index, right < nums.length
+        for (right++; right < nums.length; right++) {
+            currentSum += nums[right] - nums[left++];  // Slide the window
+            maxSum = Math.max(maxSum, currentSum);
         }
 
         return maxSum;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {2, 1, 5, 1, 3, 2};
-        int k = 3;
-        System.out.println("Max Sum of Subarray of size " + k + ": " + maxSumSubarray(nums, k));
     }
 }

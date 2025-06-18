@@ -1,6 +1,6 @@
 package basic.recursiveprogramming;
 
-import algorithms.datasturctures.Node;
+import algorithms.basic.datasturctures.Node;
 
 public class ReverseLinkedList {
     static Node reverse(Node head) {
