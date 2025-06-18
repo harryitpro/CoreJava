@@ -1,4 +1,4 @@
-package algorithms.complex;
+package algorithms.basic;
 
 /**
  * Best Time to Buy and Sell Stock (Max Profit)
@@ -23,7 +23,7 @@ package algorithms.complex;
  * profit = current_price - min_price_so_far
  * Keep track of the maximum profit.
  */
-public class DynamicProgramming_MaxProfitStock {
+public class MaxProfitStock {
     public static int maxProfit(int[] prices) {
         if (prices == null || prices.length == 0) return 0;
 

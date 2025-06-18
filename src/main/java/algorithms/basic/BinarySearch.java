@@ -1,6 +1,11 @@
 package algorithms.basic;
 
-public class BinarySearchOrderedArray {
+public class BinarySearch {
+    /**
+     * @param arr: ordered array.
+     * @param key: search key.
+     * @return  the index of the index, or -1 if not found.
+     */
     static int binarySearch(int[] arr, int key) {
         //return Arrays.binarySearch(arr,key);
         int left = 0, right = arr.length - 1;

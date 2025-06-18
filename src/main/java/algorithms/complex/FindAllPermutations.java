@@ -2,7 +2,7 @@ package algorithms.complex;
 
 import java.util.Arrays;
 
-public class LexicographicPermutations {
+public class FindAllPermutations {
     public static void generatePermutations(String str) {
         char[] chars = str.toCharArray();
         Arrays.sort(chars); // Step 1: Sort initially
