@@ -1,6 +1,6 @@
 package algorithms.basic;
 
-public class IsPalindrome {
+public class IsPalindromeString {
     /**
      * @param s: string.
      * @return: whether the given string is a palindrome string.
