@@ -1,4 +1,4 @@
-package algorithms.medium;
+package algorithms.basic;
 
 import java.util.LinkedHashSet;
 import java.util.List;
