@@ -1,14 +1,17 @@
 package algorithms.basic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Best Time to Buy and Sell Stock (Max Profit)
  * The goal is to maximize profit by buying at a lower price and selling at a higher price.
- *
+ * <p>
  * 1. Problem Statement
  * Given an array prices[] where prices[i] represents the stock price on the i-th day, find the maximum profit by choosing a single buy and single sell.
- *
+ * <p>
  * 👉 You must buy before selling.
- *
+ * <p>
  * Example
  * Input:  prices = [7, 1, 5, 3, 6, 4]
  * Output: 5
@@ -16,7 +19,7 @@ package algorithms.basic;
  * Input:  prices = [7, 6, 4, 3, 1]
  * Output: 0
  * Explanation: No profitable transaction possible.
-
+ * <p>
  * 2. Optimized Approach (O(n) Time, O(1) Space)
  * Track the lowest price so far.
  * Calculate profit at each step:
@@ -41,6 +44,9 @@ public class MaxProfitStock {
     public static void main(String[] args) {
         int[] prices = {7, 1, 5, 3, 6, 4};
         System.out.println("Max Profit: " + maxProfit(prices)); // Output: 5
+
+        String s1 = "AB";
+        List<String> list = List.of(s1);
     }
 }
 
