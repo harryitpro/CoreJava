@@ -2,7 +2,7 @@ package algorithms.basic;
 
 import java.util.*;
 
-public class DepthFirstSearch {
+public class GraphDFS {
     static List<Integer> depthFirstSearch(Map<Integer, List<Integer>> graph) {
         //go through each Integer using DFS algorithm
         Set<Integer> visited = new LinkedHashSet<>();  //keep the order of node traversing
