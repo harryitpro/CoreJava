@@ -8,7 +8,7 @@ public class LetterCombinePhoneNumber {
         if (digits == null || digits == "")
             return new ArrayList();
 
-        //use an Character array to represent the digit to letter mapping. a list to contain all the mappings
+        //use a Character array to represent the digit to letter mapping. a list to contain all the mappings
         List<char[]> digitToLetters = new ArrayList<>();
         digitToLetters.add(new char[]{'a', 'b', 'c'}); //'2'
         digitToLetters.add(new char[]{'d', 'e', 'f'}); //'3'
