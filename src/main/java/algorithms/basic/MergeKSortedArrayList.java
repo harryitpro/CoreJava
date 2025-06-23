@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class MergeSortedArrayList {
+public class MergeKSortedArrayList {
 
     //merge K sorted array with a list.
     //solution: to use PriorityQueue for best performance: O(log(K)) run-time

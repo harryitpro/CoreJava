@@ -7,7 +7,7 @@ package algorithms.complex;
  * 8 ← 7 ← 6
  */
 
-import algorithms.datasturctures.Node;
+import algorithms.datasturctures.ListNode;
 
 /**
  * approach: Floyd’s Cycle Detection Algorithm
@@ -20,13 +20,13 @@ import algorithms.datasturctures.Node;
  */
 
 public class LinkedList_IsNoCycleLinkedList {
-    public static boolean hasCycle(Node head) {
+    public static boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
 
-        Node slow = head;
-        Node fast = head;
+        ListNode slow = head;
+        ListNode fast = head;
 
         while (fast != null && fast.next != null) {
             slow = slow.next;          // Move one step
@@ -41,11 +41,11 @@ public class LinkedList_IsNoCycleLinkedList {
     }
 
     public static void main(String[] args) {
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
         head.next.next.next.next.next = head.next.next; // Cycle at node 3
 
         System.out.println(hasCycle(head)); // Output: true

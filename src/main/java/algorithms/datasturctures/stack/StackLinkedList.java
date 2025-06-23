@@ -1,9 +1,9 @@
 package algorithms.datasturctures.stack;
 
-import algorithms.datasturctures.Node;
+import algorithms.datasturctures.ListNode;
 
 class StackLinkedList {
-    private Node top;
+    private ListNode top;
 
     public StackLinkedList() {
         this.top = null;
@@ -12,8 +12,8 @@ class StackLinkedList {
     //O(1) time complexity
     //replace top pointer to the new Node, keep existing top as tmp.
     public void push(int data) {
-        Node tmp = top;
-        top = new Node(data);
+        ListNode tmp = top;
+        top = new ListNode(data);
         top.next = tmp;
     }
 
@@ -29,7 +29,7 @@ class StackLinkedList {
         if (isEmpty()) {
             throw new RuntimeException("Stack Underflow");
         }
-        Node tmp = top;
+        ListNode tmp = top;
         top = top.next;
         return tmp.val;
     }

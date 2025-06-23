@@ -1,11 +1,11 @@
 package algorithms.datasturctures;
 
 //singly Node for linkedlist
-public class Node {
+public class ListNode {
     public int val;
-    public Node next;
+    public ListNode next;
 
-    public Node(int data) {
+    public ListNode(int data) {
         this.val = data;
         this.next = null;
     }

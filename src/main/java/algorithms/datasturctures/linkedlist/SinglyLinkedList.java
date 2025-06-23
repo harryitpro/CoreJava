@@ -1,6 +1,6 @@
 package algorithms.datasturctures.linkedlist;
 
-import algorithms.datasturctures.Node;
+import algorithms.datasturctures.ListNode;
 
 /**
  * implement SinglyLinkedList.
@@ -9,19 +9,19 @@ import algorithms.datasturctures.Node;
  * tail: if needed, it's the last node in the list. tail.next == null
  */
 public class SinglyLinkedList {
-    private Node head;
+    private ListNode head;
 
-    public Node insert(int data) {
+    public ListNode insert(int data) {
         if (head == null) {
-            head = new Node(data);
+            head = new ListNode(data);
             return head;
         }
 
-        Node current = head;
+        ListNode current = head;
         while (current.next != null) {
             current = current.next;
         }
-        current.next = new Node(data);
+        current.next = new ListNode(data);
 
         return head;
     }
@@ -37,7 +37,7 @@ public class SinglyLinkedList {
         }
 
         //find the previous node of the node to be deleted,update the pointer to skip node_to_be_deleted
-        Node prev = head;
+        ListNode prev = head;
         while (prev.next != null && prev.next.val != key) prev = prev.next;
 
         //update pointer.
@@ -46,14 +46,14 @@ public class SinglyLinkedList {
 
     // traverse
     public void iterate() {
-        for (Node node = head; node != null; node = node.next) {
-            System.out.print(node.val + " -> ");
+        for (ListNode listNode = head; listNode != null; listNode = listNode.next) {
+            System.out.print(listNode.val + " -> ");
         }
         System.out.println("null");
     }
 
-    static Node reverse(Node head) {
-        Node prev = null, current = head, next;
+    static ListNode reverse(ListNode head) {
+        ListNode prev = null, current = head, next;
         while (current != null) {//loop stops till current is null
             next = current.next;  //keep next reference
             current.next = prev; //process reverse
@@ -64,11 +64,11 @@ public class SinglyLinkedList {
         return prev;
     }
 
-    static Node ofArray(int[] arr) {
-        Node head = new Node(arr[0]);
-        Node current = head;
+    static ListNode ofArray(int[] arr) {
+        ListNode head = new ListNode(arr[0]);
+        ListNode current = head;
         for (int i = 1; i < arr.length; i++) {
-            current.next = new Node(arr[i]);
+            current.next = new ListNode(arr[i]);
             current = current.next;
         }
         return head;

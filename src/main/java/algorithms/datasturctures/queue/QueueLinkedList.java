@@ -1,15 +1,15 @@
 package algorithms.datasturctures.queue;
 
-import algorithms.datasturctures.Node;
+import algorithms.datasturctures.ListNode;
 
 public class QueueLinkedList {
-    private Node front, rear; //front for dequeue, rear for enqueue
+    private ListNode front, rear; //front for dequeue, rear for enqueue
 
     public void enqueue(int data) {
         if (isEmtpy())
-            front = rear = new Node(data);
+            front = rear = new ListNode(data);
         else {
-            rear.next = new Node(data);
+            rear.next = new ListNode(data);
             rear = rear.next;
         }
     }
@@ -18,9 +18,9 @@ public class QueueLinkedList {
         if (isEmtpy()) {
             throw new RuntimeException("empty queue");
         }
-        Node node = front;
+        ListNode listNode = front;
         front = front.next;
-        return node.val;
+        return listNode.val;
     }
 
     public boolean isEmtpy() {
@@ -29,8 +29,8 @@ public class QueueLinkedList {
 
     // Display Queue
     public void display() {
-        for (Node node = front; node != null; node = node.next) {
-            System.out.println(node.val);
+        for (ListNode listNode = front; listNode != null; listNode = listNode.next) {
+            System.out.println(listNode.val);
         }
     }
 
