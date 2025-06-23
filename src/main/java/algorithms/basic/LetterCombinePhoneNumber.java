@@ -21,15 +21,10 @@ public class LetterCombinePhoneNumber {
 
         //use Queue<StringBuilder> to contain current and final result.
         Queue<StringBuilder> queue = new ArrayDeque<>();
+        queue.offer(new StringBuilder());
         for (char c : digits.toCharArray()) {
             int digitIndex = c - '2';
             char[] letters = digitToLetters.get(digitIndex);
-            int letterNums = letters.length;
-            if (queue.isEmpty()) {
-                queue.offer(new StringBuilder());
-            }
-
-            //start parsing
             int queueSize = queue.size();
             for (int i = 0; i < queueSize; i++) {
                 StringBuilder preStr = queue.poll();
@@ -51,6 +46,6 @@ public class LetterCombinePhoneNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(letterCombinations("23"));
+        System.out.println(letterCombinations("23")); //[ad, ae, af, bd, be, bf, cd, ce, cf]
     }
 }

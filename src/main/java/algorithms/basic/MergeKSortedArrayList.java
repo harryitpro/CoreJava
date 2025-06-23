@@ -42,7 +42,6 @@ public class MergeKSortedArrayList {
                 minHeap.offer(element);
             }
         }
-
         return result;
     }
 }
