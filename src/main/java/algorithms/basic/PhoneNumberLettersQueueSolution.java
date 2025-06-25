@@ -2,7 +2,7 @@ package algorithms.basic;
 
 import java.util.*;
 
-public class LetterCombinePhoneNumberMapSolution {
+public class PhoneNumberLettersQueueSolution {
     public static List<String> letterCombinations(String digits) {
         if (digits == null || digits.isEmpty()) return List.of();
         //Number-Letters dictionary
@@ -42,6 +42,6 @@ public class LetterCombinePhoneNumberMapSolution {
     }
 
     public static void main(String[] args) {
-        System.out.println(letterCombinations("23")); //[ad, ae, af, bd, be, bf, cd, ce, cf]
+        System.out.println(letterCombinations("234")); //[ad, ae, af, bd, be, bf, cd, ce, cf]
     }
 }
