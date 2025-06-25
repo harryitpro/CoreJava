@@ -30,7 +30,7 @@ public class GenerateParentheses {
             result.add(ancestor.toString());
             return;
         }
-        //start parsing, 2 scenarios: append left/append right
+        //start parsing, 2 scenarios: append OPEN/append CLOSE
         for (int i = 0; i < charSet.size(); i++) {
             StringBuilder newAncestor = new StringBuilder(ancestor);
             Character ch = charSet.get(i);

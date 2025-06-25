@@ -2,7 +2,7 @@ package algorithms.basic;
 
 import java.util.*;
 
-public class SubSets {
+public class SubSetsCombination {
     static List<List<Integer>> subsets(List<Integer> nums) {
         List<List<Integer>> allSubSets = new ArrayList<>();
         List<Integer> currentSubSet = new ArrayList<>();
