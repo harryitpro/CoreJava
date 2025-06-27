@@ -14,9 +14,6 @@ public class SubSetsCombination {
 
 
     static void subsets(List<Integer> currentSubSet, List<Integer> nums, List<List<Integer>> allSubSets, int startIndex) {
-//        if (startIndex == nums.size()) {
-//            return;
-//        }
         for (int i = startIndex; i < nums.size(); i++) { //split each node as the root of sub tree
             List<Integer> newCurrentSubSet = new ArrayList<>(currentSubSet);
             newCurrentSubSet.add(nums.get(i));
