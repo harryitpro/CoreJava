@@ -10,23 +10,23 @@ public class Knapsack {
         // Build table[][] in bottom-up manner
         for (int tableRowIndex = 1; tableRowIndex <= n; tableRowIndex++) {
             int itemIndex = tableRowIndex - 1;
-            for (int currentTableCapacity = 1; currentTableCapacity <= knapsackCapacity; currentTableCapacity++) {
+            for (int currentKnapsackCapacity = 1; currentKnapsackCapacity <= knapsackCapacity; currentKnapsackCapacity++) {
                 int currentItemWeight = itemWeight[itemIndex];
                 int currentItemValue = itemValue[itemIndex];
 
-                if (currentItemWeight <= currentTableCapacity) {
-                    // check element at previous row (tableRowIndex - 1), and column of (currentTableCapacity - currentItemWeight).
-                    int includeCurrentItem =
-                            currentItemValue + table[tableRowIndex - 1][currentTableCapacity - currentItemWeight];
+                if (currentItemWeight <= currentKnapsackCapacity) {
+                    // check element at previous row (tableRowIndex - 1), and column of (currentKnapsackCapacity - currentItemWeight).
+                    int maxValueWithCurrentItem =
+                            currentItemValue + table[tableRowIndex - 1][currentKnapsackCapacity - currentItemWeight];
 
-                    // check element at previous row (tableRowIndex - 1), and column of currentTableCapacity.
-                    int excludeCurrentItem = table[tableRowIndex - 1][currentTableCapacity];
+                    // check element at previous row (tableRowIndex - 1), and column of currentKnapsackCapacity.
+                    int maxValueWithoutCurrentItem = table[tableRowIndex - 1][currentKnapsackCapacity];
 
-                    int max = Math.max(includeCurrentItem, excludeCurrentItem);
-                    table[tableRowIndex][currentTableCapacity] = max;
+                    int max = Math.max(maxValueWithCurrentItem, maxValueWithoutCurrentItem);
+                    table[tableRowIndex][currentKnapsackCapacity] = max;
                 } else {
                     // Can't include item i
-                    table[tableRowIndex][currentTableCapacity] = table[tableRowIndex - 1][currentTableCapacity];
+                    table[tableRowIndex][currentKnapsackCapacity] = table[tableRowIndex - 1][currentKnapsackCapacity];
                 }
             }
         }
