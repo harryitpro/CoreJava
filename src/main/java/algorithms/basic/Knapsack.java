@@ -1,37 +1,23 @@
 package algorithms.basic;
 
 public class Knapsack {
-
-    // Function to solve 0/1 Knapsack Problem using Dynamic Programming
-    public static int knapsack(int[] itemWeight, int[] itemValue, int knapsackCapacity) {
-        int n = itemWeight.length;
-        int[][] table = new int[n + 1][knapsackCapacity + 1];
-
-        // Build table[][] in bottom-up manner
-        for (int tableRowIndex = 1; tableRowIndex <= n; tableRowIndex++) {
-            int itemIndex = tableRowIndex - 1;
-            for (int currentKnapsackCapacity = 1; currentKnapsackCapacity <= knapsackCapacity; currentKnapsackCapacity++) {
-                int currentItemWeight = itemWeight[itemIndex];
-                int currentItemValue = itemValue[itemIndex];
-
-                if (currentItemWeight <= currentKnapsackCapacity) {
-                    // check element at previous row (tableRowIndex - 1), and column of (currentKnapsackCapacity - currentItemWeight).
-                    int maxValueWithCurrentItem =
-                            currentItemValue + table[tableRowIndex - 1][currentKnapsackCapacity - currentItemWeight];
-
-                    // check element at previous row (tableRowIndex - 1), and column of currentKnapsackCapacity.
-                    int maxValueWithoutCurrentItem = table[tableRowIndex - 1][currentKnapsackCapacity];
-
-                    int max = Math.max(maxValueWithCurrentItem, maxValueWithoutCurrentItem);
-                    table[tableRowIndex][currentKnapsackCapacity] = max;
+    static int getMaxValue(int[] weights, int[] values, int capacity) {
+        int itemLength = weights.length;
+        int[][] maxValues = new int[itemLength + 1][capacity + 1];
+        for (int row = 1; row <= itemLength; row++) {
+            int itemWeight = weights[row - 1];
+            int itemValue = values[row - 1];
+            for (int col = 1; col <= capacity; col++) {
+                int existingMaxValueWithoutCurrentItem = maxValues[row - 1][col];
+                if (itemWeight > col) { //current item is heavier than knapsack capacity, skip current item
+                    maxValues[row][col] = existingMaxValueWithoutCurrentItem;
                 } else {
-                    // Can't include item i
-                    table[tableRowIndex][currentKnapsackCapacity] = table[tableRowIndex - 1][currentKnapsackCapacity];
+                    int maxValueWithCurrentItem = maxValues[row - 1][col - itemWeight] + itemValue;
+                    maxValues[row][col] = Math.max(existingMaxValueWithoutCurrentItem, maxValueWithCurrentItem);
                 }
             }
         }
-
-        return table[n][knapsackCapacity];  // Max value for full capacity
+        return maxValues[itemLength][capacity];
     }
 
     public static void main(String[] args) {
@@ -39,8 +25,7 @@ public class Knapsack {
         int[] itemValue = {100, 400, 500};
         int capacity = 5;
 
-        int table = knapsack(itemWeight, itemValue, capacity);
+        int table = getMaxValue(itemWeight, itemValue, capacity);
         System.out.println("Maximum value in knapsack: " + table);
     }
 }
-
