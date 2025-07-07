@@ -33,7 +33,7 @@ public class CombinationsOfKElementsPractice {
         for (int i = start; i <= end; i++) { //traverse all dependent elements
             List<Integer> newCurrentCombines = new ArrayList<>(currentCombines);
             newCurrentCombines.add(i);  //perform combination logic
-            combine(newCurrentCombines, start + 1, end, k, result); //call further dependent, DFS
+            combine(newCurrentCombines, i + 1, end, k, result); //call further dependent, DFS
         }
     }
 
