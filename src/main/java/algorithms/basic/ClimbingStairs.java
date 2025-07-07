@@ -19,6 +19,6 @@ public class ClimbingStairs {
     }
 
     public static void main(String[] args) {
-        System.out.println(climbStairsMemo(2));
+        System.out.println(climbStairsMemo(5));
     }
 }

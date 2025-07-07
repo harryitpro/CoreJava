@@ -1,6 +1,7 @@
 package algorithms.datasturctures.array;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -9,16 +10,17 @@ import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class StreamOfArrayPractice {
-
-    //init product Array
-    public String[] initProductArray() {
-        String[] products = {"tablet", "computer", "mouse", "charger"};
-        return products;
+    //most elegant solution to use Stream to convert a primitive array to a List.
+    static List<Integer> convertPrimitiveArrayToList() {
+        int[] arr = {1, 2, 3, 4, 5};
+        return Arrays.stream(arr).boxed().collect(Collectors.toList());
     }
 
-    public Stream<String> getProductStream() {
-        String[] products = {"tablet", "computer", "mouse", "charger"};
-        return Arrays.stream(products);
+    //get max element of an array
+    static int max(int[] arr) {
+        return Arrays.stream(arr)
+                .max()
+                .orElse(Integer.MIN_VALUE);
     }
 
     // Sorting
@@ -35,7 +37,6 @@ public class StreamOfArrayPractice {
                         (p1, p2) -> Integer.compare(p1.length(), p2.length())
                 )
                 .forEach(System.out::println);
-        ;
     }
 
     //Mapping

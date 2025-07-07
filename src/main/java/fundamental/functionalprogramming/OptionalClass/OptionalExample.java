@@ -15,13 +15,29 @@ import java.util.Optional;
 
 public class OptionalExample {
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         Optional<String> name = Optional.of("Alice");
         Optional<String> empty = Optional.empty();
 
         System.out.println(name.orElse("No Value"));
         System.out.println(name.orElseGet(() -> "Default Value"));
         System.out.println(empty.orElseGet(() -> "Default Value for empty optional"));
+    }
+
+    static Optional<String> foundUser() {
+        String user = "Alice";
+        Optional nullAble = Optional.ofNullable(user);
+        return nullAble;
+    }
+
+    public static void main(String[] args) {
+        Optional<String> user = foundUser();
+        if (user.isPresent()) {
+            System.out.println(user);
+            System.out.println(user.get());
+        } else {
+            System.out.println("no user found");
+        }
     }
 }
 
