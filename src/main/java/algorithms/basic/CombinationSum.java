@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Problem Statement (General Version):
+ * Given:
+ * A set (or array) of distinct integers (let's call them candidates).
+ * A target integer.
+ * Find:
+ * All unique combinations of numbers from candidates where the chosen numbers sum up to the target.
+ */
 public class CombinationSum {
 
     public List<List<Integer>> findCombinations(int[] nums, int target) {
@@ -35,11 +43,6 @@ public class CombinationSum {
 
     public static void main(String[] args) {
         CombinationSum solver = new CombinationSum();
-
-//        int[] candidates1 = {2, 3, 6, 7};
-//        int target1 = 7;
-//        System.out.println("Candidates: " + Arrays.toString(candidates1) + ", Target: " + target1);
-//        System.out.println("Combinations: " + solver.findCombinations(candidates1, target1));
 
         int[] candidates2 = {2, 3, 5};
         int target2 = 8;
